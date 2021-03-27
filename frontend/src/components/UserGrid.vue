@@ -21,7 +21,7 @@ export default {
   },
   data() {
     // Temporary list of users for debugging
-    const numUsers = 1;
+    const numUsers = 4;
     const users = Array.from({ length: numUsers }, (_, i) => ({
       name: `User${i}`,
     }));
