@@ -1,14 +1,16 @@
 <template>
   <div class="home">
-    <p>Hello, world!</p>
+    <UserGrid />
   </div>
 </template>
 
 <script>
+import UserGrid from "@/components/UserGrid";
+
 export default {
   name: "Home",
-  components: {},
+  components: {
+    UserGrid,
+  },
 };
 </script>
-
-<style lang="scss" scoped></style>
