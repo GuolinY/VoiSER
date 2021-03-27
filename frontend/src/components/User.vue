@@ -9,18 +9,13 @@
 export default {
   name: "User",
   props: {
-    userData: Object,
-  },
-  data() {
-    return {
-      name: this.userData.name,
-      isSpeaking: this.userData.isSpeaking,
-      emotion: this.userData.emotion,
-    };
+    name: String,
+    isSpeaking: Boolean,
+    emotion: String,
   },
   computed: {
     speakingBorder() {
-      return this.isSpeaking ? "speaking" : "silent";
+      return this.$props.isSpeaking ? "speaking" : "silent";
     },
   },
 };
@@ -34,6 +29,8 @@ export default {
   align-items: center;
   position: relative;
   min-width: 130px;
+  min-height: 130px;
+  height: 100%;
 
   .emotion {
     font-size: 4rem;

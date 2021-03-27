@@ -14,7 +14,7 @@ export default {
   },
   data() {
     // Temporary list of users for debugging
-    const numUsers = 15;
+    const numUsers = 300;
     const users = Array.from({ length: numUsers }, (_, i) => ({
       name: `User${i}`,
       isSpeaking: i % 3 == 0, //"random"
