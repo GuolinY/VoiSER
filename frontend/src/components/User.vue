@@ -33,19 +33,21 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
+  min-width: 130px;
 
   .emotion {
-    font-size: 5rem;
+    font-size: 4rem;
+    padding-bottom: 5vh;
   }
 
   .name {
     font-family: "Roboto", sans-serif;
     color: #03dac5;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     position: absolute;
     bottom: 0;
     left: 10px;
-    margin: 0 0 0 0;
+    margin: 0;
     opacity: 0.5;
   }
 
