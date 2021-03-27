@@ -18,7 +18,7 @@ class call_model(APIView):
             params =  request.GET.get('sentence')
             
             # predict method used to get the prediction
-            response = {'name': WebappConfig.name}
+            response = {'query': params}
             
             # returning JSON response
             return JsonResponse(response)
