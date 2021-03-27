@@ -13,24 +13,11 @@ import User from "./User.vue";
 
 export default {
   name: "UserGrid",
-  // props: {
-  //   users: Array,
-  // },
+  props: {
+    users: Array,
+  },
   components: {
     User,
-  },
-  data() {
-    // Temporary list of users for debugging
-    const numUsers = 100;
-    const users = Array.from({ length: numUsers }, (_, i) => ({
-      name: `User${i}`,
-      isSpeaking: i % 2 == 0, //"random"
-      emoticon: "😍",
-    }));
-
-    return {
-      users,
-    };
   },
 };
 </script>

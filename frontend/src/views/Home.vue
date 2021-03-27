@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <UserGrid />
+    <UserGrid :users="users" />
   </div>
 </template>
 
@@ -11,6 +11,19 @@ export default {
   name: "Home",
   components: {
     UserGrid,
+  },
+  data() {
+    // Temporary list of users for debugging
+    const numUsers = 15;
+    const users = Array.from({ length: numUsers }, (_, i) => ({
+      name: `User${i}`,
+      isSpeaking: i % 3 == 0, //"random"
+      emotion: "😍",
+    }));
+
+    return {
+      users,
+    };
   },
 };
 </script>
