@@ -1,5 +1,5 @@
 <template>
-  <div class="user" :style="{ backgroundColor: isSpeaking ? '#332940' : '#1F1B24' }">
+  <div class="user" :class="speakingBorder">
     <p class="emotion">{{ emoticon }}</p>
     <p class="name">{{ name }}</p>
   </div>
@@ -9,33 +9,45 @@
 export default {
   name: "User",
   props: {
-    name: String,
-    isSpeaking: Boolean,
-    emoticon: String
+    userData: Object,
   },
   data() {
     return {
-      
+      name: this.userData.name,
+      isSpeaking: this.userData.isSpeaking,
+      emoticon: this.userData.emoticon,
     };
-  }
-}
+  },
+  computed: {
+    speakingBorder() {
+      return this.isSpeaking ? "speaking" : "silent";
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.speaking {
+  background-color: #332940;
+}
+
+.silent {
+  background-color: #1f1b24;
+}
 
 .emotion {
   font-size: 6em;
 }
 
 .name {
-  font-family: 'Roboto', sans-serif;  
-  color: #03DAC5;
+  font-family: "Roboto", sans-serif;
+  color: #03dac5;
   font-size: 3em;
   position: absolute;
   bottom: 0;
   left: 10px;
   margin: 0 0 0 0;
-  opacity: 0.5
+  opacity: 0.5;
 }
 
 .user {
@@ -54,5 +66,4 @@ p {
   -o-user-select: none;
   user-select: none;
 }
-
 </style>

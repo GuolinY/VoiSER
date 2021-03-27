@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="3" v-for="(user, index) in users" :key="index">
-        <User :name="user.name" />
+        <User :userData="user" />
       </v-col>
     </v-row>
   </v-container>
@@ -21,9 +21,11 @@ export default {
   },
   data() {
     // Temporary list of users for debugging
-    const numUsers = 4;
+    const numUsers = 100;
     const users = Array.from({ length: numUsers }, (_, i) => ({
       name: `User${i}`,
+      isSpeaking: i % 2 == 0, //"random"
+      emoticon: "😍",
     }));
 
     return {
@@ -32,5 +34,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
