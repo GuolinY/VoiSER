@@ -1,1 +1,3 @@
 /deploy/secret_key.txt
+
+__pycache__/*
